@@ -37,7 +37,7 @@
                 padding: 10px;
             }
             body {
-                background-image: url('https://static.educalingo.com/img/ru/800/nebo.jpg');
+                background-image: url('https://cdn.pixabay.com/photo/2019/03/14/14/19/nature-4054968_960_720.jpg');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: 100% 100%;
