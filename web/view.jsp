@@ -1,8 +1,7 @@
 <%-- 
     Document   : index
     Created on : 1 січ. 2023 р., 17:05:38
-    Author     : novikovaKat  "Hello"
-hjdbshb
+    Author     : novikovaKat  
 --%>
 
 <%@page import="java.util.*"%>
@@ -13,7 +12,7 @@ hjdbshb
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lab 12</title>
+        <title>lab 13</title>
         <style>
             h1 {
                 text-align: center;
@@ -38,14 +37,14 @@ hjdbshb
                 padding: 10px;
             }
             body {
-                background-image: url('https://cdn.pixabay.com/photo/2019/03/14/14/19/nature-4054968_960_720.jpg');
+                background-image: url('https://static.educalingo.com/img/ru/800/nebo.jpg');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: 100% 100%;
             }
         </style>
     </head>
-    <h1>Servlet</h1>
+    <h1>DB Connection</h1>
     <form method="post" action="StudentAdd">
         <table>
             <tbody>
