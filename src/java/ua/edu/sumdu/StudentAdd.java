@@ -12,20 +12,20 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.LinkedList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.LinkedList;
+import java.util.List;
 import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author novikovaKat
  */
-@WebServlet(name = "StudentAdd", urlPatterns = {"/StudentAdd"})
+@WebServlet(name = "Default", urlPatterns = "/", loadOnStartup =1)
 public class StudentAdd extends HttpServlet {
 
     /**
@@ -37,7 +37,7 @@ public class StudentAdd extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       
         PrintWriter pw = null;
@@ -53,10 +53,10 @@ public class StudentAdd extends HttpServlet {
         Connection conn = null;
         
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3311/university", "root", "root");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3311/students", "root", "root");
             
             if (request.getParameter("name") != null && request.getParameter("surname") != null) {
-                PreparedStatement ps = (PreparedStatement)conn.prepareStatement("INSERT INTO student (name, surname, age, email, `group`, faculty) VALUES (?, ?, ?, ?, ?, ?);");
+                PreparedStatement ps = (PreparedStatement)conn.prepareStatement("INSERT INTO student (name, surname, age, email, group_, faculty) VALUES (?, ?, ?, ?, ?, ?);");
                 
                 ps.setString(1, request.getParameter("name"));
                 ps.setString(2, request.getParameter("surname"));
@@ -92,7 +92,6 @@ public class StudentAdd extends HttpServlet {
             }
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -131,5 +130,4 @@ public class StudentAdd extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }
